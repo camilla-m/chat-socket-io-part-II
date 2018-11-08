@@ -34,3 +34,8 @@ io.on("connection", function (client) {
         delete clients[client.id];
     });
 });
+
+
+http.listen(3000, function () {
+    console.log(process.env.PORT);
+});
