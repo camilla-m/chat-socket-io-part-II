@@ -8,7 +8,9 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
-var port_number = http.listen(process.env.PORT || 3000);
+var port_number = http.listen(process.env.PORT || 3000, function() {
+    console.log(process.env.PORT);
+});
 app.listen(port_number);
 
 app.get('/assets/css.css', function (req, res) {
@@ -35,7 +37,3 @@ io.on("connection", function (client) {
     });
 });
 
-
-http.listen(3000, function () {
-    console.log(process.env.PORT);
-});
